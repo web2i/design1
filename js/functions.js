@@ -5,7 +5,9 @@
 $(window).load(function() {
   	var largeur = $(heading).width();
     $(".heading_pic").css('width', largeur);
-    $(".about_text").stop().animate({marginTop:0 + "px",opacity:1},1000);
+    $(".text_1").stop().animate({marginTop:0 + "px",opacity:1},1000);
+    $(".text_2").stop().animate({marginTop:0 + "px",opacity:1},1000);
+    $(".text_3").stop().animate({marginTop:0 + "px",opacity:1},1000);
 });
 
 /*** Mise en route du slider ***/
@@ -23,6 +25,14 @@ $(function(){
         	$(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
         })
     }, 4000);
+});
+
+/*** Animation Lettres Cascading ***/
+
+$(function(){
+	$("#cascading").mouseover( function() {		
+		$("#cascading h1").stop().animate({opacity : "1", letterSpacing: '0px' }, 1000);
+	});
 });
 
 /*** Animation de la liste des membres ***/
