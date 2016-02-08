@@ -5,8 +5,8 @@
 $(window).load(function() {
   	var largeur = $(heading).width();
     $(".heading_pic").css('width', largeur);
-    $(".text_1").stop().animate({marginTop:0 + "px",opacity:1},1000);
-    $(".text_2").stop().animate({marginTop:0 + "px",opacity:1},1000);
+    $(".text_1").stop().animate({marginRight:0 + "px",opacity:1},1000);
+    $(".text_2").stop().animate({marginLeft:0 + "px",opacity:1},1000);
     $(".text_3").stop().animate({marginTop:0 + "px",opacity:1},1000);
 });
 
@@ -25,6 +25,18 @@ $(function(){
         	$(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
         })
     }, 4000);
+});
+
+/*** Animation share boxes ***/
+
+$(function(){
+	var width = 40; //Largeur par défaut d'une box
+	$(".box").mouseover( function(event) {
+		$(this).stop().animate({marginRight:-10 + "px",width: width+10 + "px"},200);
+	});
+	$(".box").mouseleave( function(event) {
+		$(this).stop().animate({marginRight:0 + "px",width: width + "px"},200);
+	});
 });
 
 /*** Animation Lettres Cascading ***/

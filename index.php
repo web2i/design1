@@ -20,6 +20,11 @@
 			</ul>
 		</nav>
 	</div>
+	<div class="share_boxes">
+		<a class="box" id="twitter" href="#"><img src="ressources/twitter.png"/></a>
+		<a class="box" id="facebook" href="#"><img src="ressources/facebook.png"/></a>
+		<a class="box" id="google" href="#"><img src="ressources/google.png"/></a>
+	</div>
 </header>
 
 <body>
