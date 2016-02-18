@@ -15,8 +15,8 @@
 			<ul>
 				<li><img id="header_logo" src="ressources/logo.png"/></li>
 				<li><a href="#">Accueil</a></li>
-				<li><a href="#">Projets</a></li>
-				<li><a href="#">Notre Equipe</a></li>
+				<li><a href="projets.php">Projets</a></li>
+				<li><a href="membres.php">Notre Equipe</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -30,9 +30,9 @@
 <body>
 <section id="heading">
 	<ul>
-		<li><img class="heading_pic" src="ressources/pic1.jpg" /></li>
-		<li><img class="heading_pic" src="ressources/pic2.jpg" /></li>
-		<li><img class="heading_pic" src="ressources/pic3.jpg" /></li>
+		<li><img class="heading_pic" src="ressources/slider_accueil/pic1.jpg" /></li>
+		<li><img class="heading_pic" src="ressources/slider_accueil/pic2.jpg" /></li>
+		<li><img class="heading_pic" src="ressources/slider_accueil/pic3.jpg" /></li>
 	</ul>
 </section>
 
@@ -125,8 +125,7 @@
 
 <footer id="footer">
 	<div id="footer_container">
-	  	<input id="footer_input" type="submit" value="Connexion" />
-	  	<label for="footer_input" for="my-file" id="footer_label" tabindex="0"></label>
+	  	<a href="login.php" id="footer_input">Connexion<a/>
 		<h5>Copyright© 2015-2016 Web2i. All Rights Reserved.</h5>
 	</div>
 </footer>

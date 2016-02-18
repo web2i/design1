@@ -86,3 +86,43 @@ $(window).scroll(function(){
 	else
 		$('.top_link').fadeOut(600);
 });
+
+
+/*** PROJECTS ANIMATION ***/
+
+$(function($){
+
+	var current = null;
+	var t = parseInt($('#content a:first span.title').css('top'));
+	var l = parseInt($('#content a:first span.desc').css('top'));
+
+	$('#content a').mouseover(function(){
+		if (current && $(this).index() != current.index()) {
+			current.find('span.bg').stop().fadeOut();
+		}
+		if (current && $(this).index() == current.index()) {
+			return null;
+		}
+		$(this).find('span.bg').hide().stop().fadeTo(300,0.7);
+		$(this).find('span.title').css({
+			opacity : 0,
+			top : t + 25
+		}).animate({
+			opacity : 1,
+			top : t
+		});
+		$(this).find('span.desc').css({
+			opacity : 0,
+			top : l + 25
+		}).animate({
+			opacity : 1,
+			top : l
+		});
+		current = $(this);
+	});
+});
+
+
+
+
+

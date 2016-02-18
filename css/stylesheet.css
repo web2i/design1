@@ -1,9 +1,9 @@
-html, body {margin : 0px;padding:0;background-color: #bec6e2;font-family: sans-serif;}
+html, body {margin : 0px;padding:0;background-color: #eaeaea;font-family: sans-serif;}
 
 /*** NAVIGATION BAR ***/
 
 #header_logo { width: 140px;height: 40px;vertical-align:middle;}
-#header {width:100%;background-image:linear-gradient(to bottom,#f6f6f6,#e8e8e8,#9aaecc);border-top: 4px solid #5270a3;position: fixed;z-index: 2000;}
+#header {width:100%;background-image: linear-gradient(to bottom, #fff, #f2f2f2);border-top: 4px solid #5270a3;position: fixed;z-index: 2000;}
 .header_block {
     margin-left: auto;
     margin-right: auto;
@@ -72,7 +72,7 @@ html, body {margin : 0px;padding:0;background-color: #bec6e2;font-family: sans-s
     position: relative;
     margin:0;
     height: 200px;
-    background-image: url("../ressources/pic4.jpg");
+    background-image: url("../ressources/slider_accueil/pic4.jpg");
     background-attachment: fixed;
 }
 #cascading h1 {color: white;text-align: center;line-height: 8;letter-spacing: 10px;opacity: 0;}
@@ -106,18 +106,66 @@ html, body {margin : 0px;padding:0;background-color: #bec6e2;font-family: sans-s
 }
 .team_member div {border-left: 1px dashed #616a77;padding-left: 5px;display: inline-block;}
 
-/*** NUMBERS SECTION ***/
 
-/* Jauge progressive à venir*/
+/*** PROJECTS SECTION ***/
+
+
+#content {padding-top:100px;margin-left: 10%;width: 80%;text-align: center;color:#424753;background-color: white;}
+.content_title {line-height: 3;text-align: center;margin-bottom: 20px;}
+#content a {text-decoration:none;height: 300px;display: inline-block;position: relative;}
+#content a img {border:none; width: 100%; height: 300px;}
+#content a span {display:none;position: absolute;top:25px; left: 25px;}
+#content a:hover span {display: block;}
+#content span.title {z-index:2;top:60px;color:#FFF;font-weight: bold; font-size: 1.2em;}
+#content span.desc {z-index:2;top:90px;color:#BABABA;font-weight: bold; font-size: 0.9em;}
+#content span.bg {top:0;left: 0;height: 300px;width: 100%;background-color:rgba(0,0,0,0.7);z-index:1;}
+
+/*** MEMBERS SECTION ***/
+
+#members {padding-top:100px;
+    color:#424753;
+    margin-top:0;
+    background-color: white;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;}
+.member {display: inline-block;margin-left: 40px;margin-top: 10px;cursor: pointer;border-radius: 6px;}
+.member:hover {background-color: #7db2bc;transition:600ms;}
+.member img {
+    width: 60px;
+    box-shadow:  2px 1px 2px #333333; /*horizontal vertical fondu couleur (+inset pour inverser l'orientation*/
+    margin-right: 20px;
+    border-radius: 50%;
+    float: left;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.member div {border-left: 1px dashed #616a77;padding-left: 10px;display: inline-block;}
+.members_list {background-color: #d0d0d0;width:80%;margin-left: 10%;border-bottom: 2px solid blue;padding-bottom: 10px;border-radius: 6px;}
+
+/*** LOGIN SECTION ***/
+
+#login_picture {color: white;padding-top:100px;width: 100%; height: 200px;background-image: url("../ressources/images/pic1.jpg");}
+#connection {
+    padding-top: 100px;
+    color:#424753;
+    margin-top:0;
+    background-color: white;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;padding-bottom: 200px;}
+#connection form {padding-left: 10%;width: 80%;}
+
 
 /*** FOOTER ***/
 
-#footer {position: relative;background-color: #312f38;width: 100%;margin-top: 20px;}
+#footer {position: relative;float: bottom; background-color: #312f38;width: 100%;margin-top: 20px;}
 #footer_container h5 {display:inline-block;margin-left: 4%;color: #f0f0f0;}
 #footer_container {padding-bottom: 40px;width: 100%;padding-top: 40px;}
 
 #footer_input {
-    display: inline-block;
+    text-decoration: none;color: black;
     margin: 20px;
     padding: 8px 15px;
     background-color: #6c7492;
