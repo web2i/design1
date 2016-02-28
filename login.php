@@ -31,17 +31,12 @@
 
 <div id="login_picture"><h2 class="about_title">Connection pour les membres de MindUp</h2></div>
 
-<section id="connection">
-	<form action="wall.php" method="POST">
-		<fieldset id="">       
-			<legend class="info">Se connecter :</legend> 
-			<!-- Ensemble de champs: Identifiants -->
-				<br/>
-				<label for="txtLogin" class="info">Login: </label><input class="txt" type="text" name="login" value="" /> <br/><br/>
-				<label class="info">Mot de Passe: </label><input class="txt" type="password" name="mdp" value="" /> <br/><br/>
-				<label class="info"></label><input id="valider" type="submit" name="valider" value="Se connecter" /> <br/><br/><br/>
-	
-		</fieldset>
+<section id="connection_field">
+	<form action="private_index.php" method="POST">
+		<!-- Ensemble de champs: Identifiants -->
+		<label for="txtLogin" class="info">Login: </label><input class="connection_input" type="text" name="login" value="" /> <br/><br/>
+		<label class="info">Mot de Passe: </label><input class="connection_input" type="password" name="mdp" value="" /> <br/><br/>
+		<label class="info"></label><input class="connection_btn" type="submit" name="valider" value="Se connecter" /> <br/><br/><br/>
 	</form>
 </section>
 

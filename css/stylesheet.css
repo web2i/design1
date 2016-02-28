@@ -1,15 +1,39 @@
 html, body {margin : 0px;padding:0;background-color: #eaeaea;font-family: sans-serif;}
 
+/*** NOTIFICATION BLOCK ***/
+
+.notification {
+    background-image : linear-gradient(to bottom, #dff0d8 0px, #c8e5bc 100%);
+    border : 2px solid #d6e9c6;
+    color : #3c763d;
+    border-radius: 5px;
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    z-index: 2001;
+    right:5px;
+    font-size: 0.8em;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2);
+    position: fixed;
+    /*animation jquery:*/
+    display: none;
+}
+
+.notification > span{float: right;margin-top: 5px; margin-left: .3em;}
+.notification > p{margin-left: 10px;}
+
 /*** NAVIGATION BAR ***/
 
 #header_logo { width: 140px;height: 40px;vertical-align:middle;}
 #header {width:100%;background-image: linear-gradient(to bottom, #fff, #f2f2f2);border-top: 4px solid #5270a3;position: fixed;z-index: 2000;}
 .header_block {
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-    max-width: 100%;
+    max-width: 90%;
     padding-top: 0px;
     padding-bottom: 0px;
     height: 60px;
@@ -30,6 +54,23 @@ html, body {margin : 0px;padding:0;background-color: #eaeaea;font-family: sans-s
     border-bottom: 4px solid #59a8b4;
     color: #444444;
 }
+
+#header_input {
+    text-decoration: none;color: black;display: inline-block;
+    margin: 20px;
+    padding: 8px 15px;
+    background-color: #6c7492;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2);
+    transition: all .4s;
+    font-family: sans-serif;
+    cursor: pointer;
+    float: right;
+    margin-right: 30px;
+}
+#header_input:hover {background: #7e8fd0;color: white;}
 
 /*** SLIDER ***/
 
@@ -110,7 +151,7 @@ html, body {margin : 0px;padding:0;background-color: #eaeaea;font-family: sans-s
 /*** PROJECTS SECTION ***/
 
 
-#content {padding-top:100px;margin-left: 10%;width: 80%;text-align: center;color:#424753;background-color: white;}
+#content {overflow:hidden;padding-top:100px;margin-left: 10%;width: 80%;text-align: center;color:#424753;background-color: white;}
 .content_title {line-height: 3;text-align: center;margin-bottom: 20px;}
 #content a {text-decoration:none;height: 300px;display: inline-block;position: relative;}
 #content a img {border:none; width: 100%; height: 300px;}
@@ -119,6 +160,7 @@ html, body {margin : 0px;padding:0;background-color: #eaeaea;font-family: sans-s
 #content span.title {z-index:2;top:60px;color:#FFF;font-weight: bold; font-size: 1.2em;}
 #content span.desc {z-index:2;top:90px;color:#BABABA;font-weight: bold; font-size: 0.9em;}
 #content span.bg {top:0;left: 0;height: 300px;width: 100%;background-color:rgba(0,0,0,0.7);z-index:1;}
+.element {overflow: hidden;}
 
 /*** MEMBERS SECTION ***/
 
@@ -142,12 +184,56 @@ html, body {margin : 0px;padding:0;background-color: #eaeaea;font-family: sans-s
     margin-left: 8px;
 }
 .member div {border-left: 1px dashed #616a77;padding-left: 10px;display: inline-block;}
-.members_list {background-color: #d0d0d0;width:80%;margin-left: 10%;border-bottom: 2px solid blue;padding-bottom: 10px;border-radius: 6px;}
+.members_list {background-color: #e4e6ef;width:80%;margin-left: 10%;border-bottom: 2px solid blue;
+    padding-bottom: 10px;border-radius: 6px;box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 2px 4px rgba(0,0,0,0.1);}
+
+/*** PROFIL SECTION ***/
+
+.profil_content {
+    padding-top:100px;
+    color:#424753;
+    margin-top:0;
+    background-color: white;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify;
+}
+
+.profil_content > ul {
+    list-style-type: none;
+    border-bottom: 1px solid grey;
+    box-shadow: inset 0 2px 0 rgba(0,0,0,.2), 
+    0 2px 4px rgba(0,0,0,0.1);
+    line-height: 0.3;
+    padding: 10px;
+}
+
+.profil_image {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    float: right;
+}
+
+.profil_projects {
+    width: 100%;
+    box-shadow: inset 0 2px 0 rgba(0,0,0,.2), 
+    0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profil_projects >* {
+    width: 160px;
+    height: 100px;
+    cursor: pointer;
+}
 
 /*** LOGIN SECTION ***/
 
 #login_picture {color: white;padding-top:100px;width: 100%; height: 200px;background-image: url("../ressources/images/pic1.jpg");}
-#connection {
+#connection_field {
     padding-top: 100px;
     color:#424753;
     margin-top:0;
@@ -155,7 +241,246 @@ html, body {margin : 0px;padding:0;background-color: #eaeaea;font-family: sans-s
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;padding-bottom: 200px;}
-#connection form {padding-left: 10%;width: 80%;}
+#connection_field form {padding-left: 10%;width: 80%;}
+ 
+.info {margin: 20px;font-size: 1.6em;}
+.connection_input {
+  margin: 20px;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  color: #333;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 2px 4px rgba(0,0,0,0.1);
+   
+}
+
+.connection_input:focus { 
+  outline: none;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1),
+    0 0 5px 1px #51CBEE;
+}
+
+.connection_btn {
+  float: left;
+  margin: 20px;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  color: #333;
+  background-color: #b9b9b9;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1);
+}
+
+.connection_btn:focus {background: #7e8fd0;color: white;}
+
+/*** SIGN UP SECTION ***/
+
+#signUp_picture {color: white;padding-top:100px;width: 100%; height: 200px;background-image: url("../ressources/images/pic2.jpg");background-position:0% 25%;}
+#signUp_field {
+    padding-top: 50px;
+    color:#424753;
+    margin-top:0;
+    background-color: white;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;padding-bottom: 200px;}
+#signUp_field form {padding-left: 10%;width: 80%;}
+
+.SignUp_documents{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 1px;
+    width:auto;
+    height:150px;
+    border: 1px solid grey;
+}
+.SignUp_documents_buttons
+{
+    padding-right:13px;
+}
+
+
+.signUp_input {
+  margin: 20px;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  color: #333;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 2px 4px rgba(0,0,0,0.1);
+   
+}
+
+.signUp_input:focus { 
+  outline: none;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1),
+    0 0 5px 1px #51CBEE;
+}
+
+.signUp_btn {
+  float: left;
+  margin: 20px;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  color: #333;
+  background-color: #b9b9b9;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1);
+}
+
+.signUp_btn2{
+  float: right;
+  margin-bottom:10px;
+  margin-right:5px;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  color: #333;
+  background-color: #b9b9b9;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1);
+}
+
+.signUp_btn:focus {background: #7e8fd0;color: white;}
+
+.info2 {margin: 20px;font-size: 1.0em;}
+.info3 {margin: 20px;font-size: 1.6em;}
+.info4 {margin-left: 20px;font-size: 1.0em;}
+
+/*** PRIVATE INDEX SECTION ***/
+
+#buttons_group_gestion {
+    text-align:center;
+}
+
+.button_gestion {
+    font-size:1.2em;
+    margin: 20px;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 30px 15px 30px;
+    color: #333;
+    background-color: #b3b3ff;
+    box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1);
+    line-height: 6;
+}
+
+.button_gestion:focus {background: #7e8fd0;color: white;}
+#private_navig {
+    padding-top: 80px;
+}
+
+/* Override de certaines classes et ids de jquery_ui */
+
+.ui-widget-header {
+    border: 1px solid #333e66;
+}
+
+.ui-tabs {
+    position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+    padding: 0;
+}
+
+.ui-tabs-anchor {
+    color: grey;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+    border: 1px solid #333e66;
+    background: #fdf5ce url("images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+    font-weight: bold;
+    color: grey;
+}
+
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+    color: #c77405;
+    text-decoration: none;
+}
+
+.ui-tabs .ui-tabs-panel {
+    display: block;
+    border-width: 0;
+    padding: 1em 1.4em;
+    background: none;
+    margin-left: 10%;width: 80%;
+}
+
+/*** ADMIN SECTION ***/
+
+.admin {
+    border: 1px solid black;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.admin2 {
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center; /* center checkbox horizontally */
+    vertical-align: middle; /* center checkbox vertically */
+    width:10%; 
+}
+th {
+    border: 1px solid black;
+}
+
+.add_user {
+    position: absolute;
+    top: 520px;
+    right: 90px;
+    width: 40px;
+    height: 40px;
+}
+
+
+#section_admin{
+width: 80%;
+padding-left: 10%;
+font-family: sans-serif;
+padding-right: 10%;
+
+}
+
+
+/*** DATA SECTION ***/
+
+#data {padding-top:100px;
+    color:#424753;
+    margin-top:0;
+    background-color: white;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;}
 
 
 /*** FOOTER ***/
@@ -179,3 +504,47 @@ html, body {margin : 0px;padding:0;background-color: #eaeaea;font-family: sans-s
     margin-left: 30%;
 }
 #footer_input:hover {background: #7e8fd0;color: white;}
+
+
+/*** APROPOS POPUP ***/
+
+.apropos_popup {
+    width: 600px;
+    background-color: white;
+    position: absolute;
+    left:25%;
+    top: 200px;
+    padding: 40px;
+    text-align: center;
+    text-align: justify;border-radius: 8px;
+    color: grey;
+    border: 1px solid #c94e50;
+}
+
+.apropos_input { 
+    background-color: white;
+    color: #c94e50;
+    width: 80px;
+    height: 50px;   
+    font-size: 1.5em;
+    padding: 10px 30px 10px 30px;
+    border: 1px solid #c94e50;
+    cursor: pointer;
+    margin-left: 40%;
+}
+
+.apropos_input:hover { 
+    background-color: #c94e50;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
