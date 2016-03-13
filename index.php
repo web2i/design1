@@ -1,133 +1,71 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<?php
+	include("templates/header.php");
 
-<head>	
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>maquette1 - Projet Mind-Up</title>
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="all"/>
-	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-	<script type="text/javascript" src="js/functions.js"></script>
-</head>
+	// on récupère le paramètre view éventuel 
+	if (isset($_GET["view"])) {
+		$view = $_GET["view"];
+	}
+	else {
+		//s'il n'existe pas on met par default acceuil
+		$view = "home";
+	}
 
-<header id="header">
-	<div class="header_block">
-		<nav>
-			<ul>
-				<li><img id="header_logo" src="ressources/logo.png"/></li>
-				<li><a href="#">Accueil</a></li>
-				<li><a href="projets.php">Projets</a></li>
-				<li><a href="membres.php">Notre Equipe</a></li>
-			</ul>
-		</nav>
-	</div>
-	<div class="share_boxes">
-		<a class="box" id="twitter" href="#"><img src="ressources/twitter.png"/></a>
-		<a class="box" id="facebook" href="#"><img src="ressources/facebook.png"/></a>
-		<a class="box" id="google" href="#"><img src="ressources/google.png"/></a>
-	</div>
-</header>
+	// En fonction de la vue à afficher, on appelle tel ou tel template
+	switch($view)
+	{		
 
-<body>
-<section id="heading">
-	<ul>
-		<li><img class="heading_pic" src="ressources/slider_accueil/pic1.jpg" /></li>
-		<li><img class="heading_pic" src="ressources/slider_accueil/pic2.jpg" /></li>
-		<li><img class="heading_pic" src="ressources/slider_accueil/pic3.jpg" /></li>
-	</ul>
-</section>
+		case "home" : 
+			include("templates/home.php");
+		break;
 
-<section id="about">
-	<h2 class="about_title">Build your beautiful UI, the way you want it</h2>
-	<p class="text_1">A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>
-	<p class="text_2">A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>	
-	<p class="text_3" >A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>	
+		case "projects" : 
+			include("templates/projects.php");
+		break;
 
-</section>
-<section id="cascading">
-	<h1>Tellus nam ad fermentum ac enim est duis facilisis.</h1>
-</section>
-<section id="about">
-	<h2 class="about_title">lacus adipiscing consequat risus consectetur scelerisque</h2>
-	<p class="text_1">A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>
-	<p class="text_2">A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>	
-	<p class="text_3" >A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>	
+		case "members" : 
+			include("templates/members.php");
+		break;
 
-</section>
-<section id="team">
-	<h3 class="team_title">Animated Grid Layout</h3>
-	<p class="team_text">A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>
-	<ul class="team_list">
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-		<li class="team_member">
-			<img src="ressources/profil.jpeg">
-			<div>
-				<h3>Parturient suspendisse</h3>
-				<span>fermentum ac enim est</span>
-			</div>
-		</li>
-	</ul>
-</section>
+		case "profil" : 
+			include("templates/profil.php");
+		break;
 
-<footer id="footer">
-	<div id="footer_container">
-	  	<a href="login.php" id="footer_input">Connexion<a/>
-		<h5>Copyright© 2015-2016 Web2i. All Rights Reserved.</h5>
-	</div>
-</footer>
-</body>
-</html>
+		case "login" : 
+			include("templates/login.php");
+		break;
+
+		case "private_index" : 
+			include("templates/private_index.php");
+		break;
+
+		case "data" : 
+			include("templates/data.php");
+		break;
+
+		case "admin_space" : 
+			include("templates/admin_space.php");
+		break;
+
+		case "inscription" : 
+			include("templates/inscription.php");
+		break;
+	}
+
+	include("templates/footer.php");
+?>
+
+Accueil (home)
+$array = array(
+'title'=>'DEFAULT',
+'p'=>array(
+'1'=>'DEFAULT',
+'2'=>'DEFAULT'));
+
+
+
+
+
+
+
+
+

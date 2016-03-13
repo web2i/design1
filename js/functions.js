@@ -122,22 +122,15 @@ $(function($){
 	});
 });
 
-/*** NOTIFICATION BLOCK ***/
+/*** APROPOS SECTION ***/
 
 $(function(){
-	
-	$(document).mouseenter( function(event) {
-		$(".notification").stop().fadeIn(500);
-	});
-	$(".notification>span").click( function(event) {
-		$(".notification").stop().fadeOut(500);
-	});
-	$(".notification>span").mouseover( function(event) {
-		$(this).removeClass('ui-icon ui-icon-closethick').addClass('ui-icon ui-icon-circle-close');
-	});
-
-	$(".notification>span").mouseleave( function(event) {
-		$(this).removeClass('ui-icon ui-icon-circle-close').addClass('ui-icon ui-icon-closethick');
+	$("#apropos_input").click(function(){
+		$("#apropos_popup").stop().animate({opacity : "0", top: '0px' }, 300);
 	});
 });
-
+$(function(){
+	$("#apropos_btn").click(function(){
+		$("#apropos_popup").stop().animate({opacity : "1", top: '100px' }, 300);
+	});
+});
